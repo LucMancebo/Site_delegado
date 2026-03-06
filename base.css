@@ -289,10 +289,6 @@ h6 {
   font-weight: var(--font-weight-medium);
 }
 
-p {
-  margin-bottom: var(--spacing-md);
-}
-
 /* Links */
 a {
   color: var(--color-gold-accent);
