@@ -297,33 +297,6 @@
       </footer>
     </section>
 
-    <script>
-      // Armazenar dados do JSON
-      let cidadesData = null;
-
-      // Carregar cidades do Rio de Janeiro
-      fetch('cidades-rj.json')
-        .then(response => response.json())
-        .then(data => {
-          cidadesData = data.cidades;
-          const selectCidade = document.getElementById('cidade-select');
-          
-          // Adicionar cidades ao select
-          Object.keys(data.cidades).forEach(cidade => {
-            const option = document.createElement('option');
-            option.value = cidade;
-            option.textContent = cidade;
-            selectCidade.appendChild(option);
-          });
-        })
-        .catch(error => console.error('Erro ao carregar cidades:', error));
-
-      // Futuramente: adicionar evento para popular bairros quando cidade for selecionada
-      // document.getElementById('cidade-select').addEventListener('change', function() {
-      //   const cidadeSelecionada = this.value;
-      //   const selectBairro = document.getElementById('bairro-select');
-      //   // Lógica para popular bairros baseado na cidade selecionada
-      // });
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>
