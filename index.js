@@ -81,3 +81,34 @@ cidadeSelect.addEventListener('change', () => {
 
   preencherBairros(bairros);
 });
+
+/* -------------------------------------- /
+          select cidade e estado
+ -------------------------------------- */
+
+ form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const payload = {
+    fullName: nomeInput.value,
+    email: emailInput.value,
+    city: cidadeSelect.value,
+    bairro: bairroSelect.value,
+    message: mensagemInput.value,
+  };
+
+  const response = await fetch('http://localhost:3333/api/supports', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    alert('Erro ao enviar apoio. Verifique os campos.');
+    return;
+  }
+
+  alert('Apoio enviado com sucesso.');
+  form.reset();
+  resetCidade();
+});
